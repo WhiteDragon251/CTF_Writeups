@@ -7,8 +7,7 @@ Files: public.zip
 
 ## Solution
 
-![image1.png](images/image1.png)
-![test](https://vpnoverview.com/wp-content/uploads/what-is-a-hacker-what-is-hacking-featured-800x400.png)
+![image1](image1.png)
 
 We are given a file upload page where you can only upload file types of `jpg`, `jpeg` and `png`. If we could somehow find a way to upload a `php` code on the web server, then we could use it to get command injection on the server.
 
