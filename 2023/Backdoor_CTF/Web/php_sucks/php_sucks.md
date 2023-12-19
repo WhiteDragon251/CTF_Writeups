@@ -37,8 +37,8 @@ $fileName = strtok($fileName, chr(7841151584512418084));
 The first line just url decodes the file name. The second line is what we use in our exploit.
 When I looked for the `strtok` function, this is what I found.
 
-[strtok](images/strtok.png)
-[![strtok() and strtok_r() functions in C with examples - GeeksforGeeks](https://www.geeksforgeeks.org/strtok-strtok_r-functions-c-examples/)]
+[!strtok](images/strtok.png)
+[![strtok() and strtok_r() functions in C with examples - GeeksforGeeks]](https://www.geeksforgeeks.org/strtok-strtok_r-functions-c-examples/)
 
 So it basically splits the string at a particular delimiter and then the `fileName` becomes equal to the first element obtained. The `chr(7841151584512418084)` is the delimiter which is just the `$` character. So now, the challenge can be easily solved.
 
