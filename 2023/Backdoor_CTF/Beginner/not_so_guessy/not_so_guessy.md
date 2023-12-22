@@ -170,6 +170,6 @@ Thus our correct guesses for the 2020 game are
 Scissors Rock Rock Rock Scissors Rock Paper Paper Paper Rock Paper Scissors Paper Paper Rock Rock Scissors Scissors Rock 
 ```
 
-Now, we can send this to server (either manually or use some script). I just sent it manually and voila, we have your flag 😎.
+Now, we can send this to server (either manually or use some script). I just sent it manually and voila, we have our flag 😎.
 
 Thanks for reading!
