@@ -121,6 +121,6 @@ The logic behind the program is simple, we initialize the program at a seed of `
 
 It would be better to do this using a proper script, using it to start the connection and then sending all the correct answers but I am just too lazy so I simply sent the answers manually😅.
 
-[flag_obtained](images/flag_obtained.png)
+![flag_obtained](images/flag_obtained.png)
 
 Voila, there is our flag😎!
