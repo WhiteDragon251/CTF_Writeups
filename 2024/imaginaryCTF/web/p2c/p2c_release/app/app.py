@@ -21,12 +21,9 @@ print(rgb_parse(main()))""")
     os.system(f"chmod 755 {file}")
 
     try:
-        # res = subprocess.run(["sudo", "-u", "user", "python3", file], capture_output=True, text=True, check=True, timeout=0.1)
-        res = subprocess.run(["python", file], capture_output=True, text=True, check=True, timeout=0.1)
+        res = subprocess.run(["sudo", "-u", "user", "python3", file], capture_output=True, text=True, check=True, timeout=0.1)
         output = res.stdout
-        print("Output:", output)
     except Exception as e:
-        print("Error:", e)
         output = None
 
     os.remove(file)
@@ -38,7 +35,6 @@ def index():
     res = None
     if request.method == "POST":
         code = request.form["code"]
-        print("Running xec")
         res = xec(code)
         valid = re.compile(r"\([0-9]{1,3}, [0-9]{1,3}, [0-9]{1,3}\)")
         if res == None:
@@ -49,4 +45,4 @@ def index():
     return render_template("index.html", rgb=f"rgb({randint(0, 256)}, {randint(0, 256)}, {randint(0, 256)})")
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=3000, debug=True)
+    app.run(host='0.0.0.0', port=80)
