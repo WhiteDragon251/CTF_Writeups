@@ -1,4 +1,4 @@
-# CTF Writeups
+# Description
 
 This repository contains detailed writeups for the CTF (Capture The Flag) challenges I have solved. Each writeup includes a comprehensive explanation of the problem, the steps taken to solve it, and the final solution.
 
