@@ -17,4 +17,10 @@ This repository contains detailed writeups for the CTF (Capture The Flag) challe
   - [Beginner/fruit_basket](./2023/Backdoor_CTF/Beginner/fruit_basket)
   - [Beginner/not_so_guessy](./2023/Backdoor_CTF/Beginner/not_so_guessy)
 
+### 2020
+
+- CyberWizardsCTF
+  - [Mastardet's Challenge](./2020/CyberWizardsCTF/mastardetsChallenge)
+
+
 Thanks for reading.
