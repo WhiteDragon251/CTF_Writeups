@@ -20,7 +20,7 @@ This repository contains detailed writeups for the CTF (Capture The Flag) challe
 ### 2020
 
 - CyberWizardsCTF
-  - [Mastardet's Challenge](./2020/CyberWizardsCTF/mastardetsChallenge)
+  - [Mastardet's Challenge](./2020/cyberWizardsCTF/mastardetsChallenge)
 
 
 Thanks for reading.
