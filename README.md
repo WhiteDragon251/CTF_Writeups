@@ -9,6 +9,7 @@ This repository contains detailed writeups for the CTF (Capture The Flag) challe
 - DeadSecCTF
   - [Web/Bing2](./2024/deadsecCTF/web/bing2)
   - [Web/Bing_Revenge](./2024/deadsecCTF/web/bing_revenge)
+  - [Web/Retro-Calculator](./2024/deadsecCTF/web/retro_calculator)
 
 - ImaginaryCTF
   - [Web/p2c](./2024/imaginaryCTF/web/p2c)
