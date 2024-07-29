@@ -6,6 +6,9 @@ This repository contains detailed writeups for the CTF (Capture The Flag) challe
 
 ### 2024
 
+- DeadSecCTF
+  - [Web/Bing2](./2024/deadsecCTF/web/bing2)
+
 - ImaginaryCTF
   - [Web/p2c](./2024/imaginaryCTF/web/p2c)
   - [Rev/unconditional](./2024/imaginaryCTF/rev/unconditional)
