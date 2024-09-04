@@ -6,6 +6,10 @@ This repository contains detailed writeups for the CTF (Capture The Flag) challe
 
 ### 2024
 
+- BlackHat MEA CTF Qualification 2024
+  - [Web/Watermelon](./2024/blackhatMEAQualsCTF/web/watermelon)
+  - [Web/Fastest Delivery Service](./2024/blackhatMEAQualsCTF/web/fastestDeliveryService)
+
 - DeadSecCTF
   - [Web/Bing2](./2024/deadsecCTF/web/bing2)
   - [Web/Bing_Revenge](./2024/deadsecCTF/web/bing_revenge)
